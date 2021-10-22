@@ -1,36 +1,47 @@
 <?php
+require_once("pessoa.class.php");
 
-require_once('pessoa.class.php');
+class Teste{
+	private $pessoa;
 
-class Teste {
-    private $pessoa;
+	public function __construct(){
+		$pessoa = new Pessoa();
 
-    public function __construct () {
-        $pessoa = new Pessoa();
+		$pessoa ->setNome("Ester Leonardo");
+		echo $pessoa->getNome();
 
-        $nome = 'Jefferson Oliveira';
-        $endereco = 'Rua Nova Bassamo';
-        $bairro = 'Itaquera';
-        $cep = '08240-220';
-        $cidade = 'São Paulo';
-        $estado = 'São Paulo';
+		echo '<hr>';
 
-        $pessoa->setNome($nome);
-        $pessoa->setEndereco($endereco);
-        $pessoa->setBairro($bairro);
-        $pessoa->setCep($cep);
-        $pessoa->setCidade($cidade);
-        $pessoa->setEstado($estado);
+		$pessoa->setEndereco("Rua Sancho Junqueira 691");
+		echo $pessoa->getEndereco();
 
-        $pessoaArray = [$pessoa->getNome(), $pessoa->getEndereco(), $pessoa->getBairro(), $pessoa->getCep(), $pessoa->getCidade(), $pessoa->getEstado()];
-        
-        for ($i=0; $i < count($pessoaArray); $i++) {
-            echo $pessoaArray[$i];
-            echo '<hr>';
-        }
-    }
-}
+		echo '<hr>';
 
-new Teste();
+		$pessoa->setBairro("Vila Rio Branco");
+		echo $pessoa->getBairro();
 
-?>
+        echo '<hr>';
+
+        $pessoa->setCep ("03875 000");
+		echo $pessoa->getCep();
+		
+        echo '<hr>';
+
+        $pessoa->setCidade ("São Paulo");
+		echo $pessoa->getCidade();
+		
+        echo '<hr>';
+
+        $pessoa->setEstado ("SP");
+		echo $pessoa->getEstado();
+		
+        echo '<hr>';
+
+
+
+
+
+	}
+}new Teste();
+
+
